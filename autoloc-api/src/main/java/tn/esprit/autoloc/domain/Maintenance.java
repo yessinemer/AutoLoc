@@ -28,7 +28,7 @@ public class Maintenance {
     @Column(length = 500)
     private String description;
 
-    // N Maintenance -> 1 Vehicule : unidirectionnelle, cascade PERSIST
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id_vehicule", nullable = false)
     private Vehicule vehicule;

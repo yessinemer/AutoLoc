@@ -44,12 +44,12 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
     private StatutVehicule statut;
 
-    // N Vehicule -> 1 Agence
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_agence")
     private Agence agence;
 
-    // N Vehicule <-> N Equipement (Vehicule est le côté propriétaire -> table de jointure)
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "vehicule_equipement",
@@ -58,7 +58,7 @@ public class Vehicule {
     )
     private Set<Equipement> equipements = new HashSet<>();
 
-    // 1 Vehicule -> N Reservation
+
     @OneToMany(mappedBy = "vehicule", fetch = FetchType.LAZY)
     private List<Reservation> reservations = new ArrayList<>();
 }

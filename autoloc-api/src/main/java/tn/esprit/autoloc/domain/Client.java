@@ -40,7 +40,7 @@ public class Client {
     @Column(nullable = false)
     private LocalDate dateInscription;
 
-    // 1 Client -> N Reservation : PERSIST (enregistrer un client enregistre ses nouvelles réservations)
+
     @OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
     private List<Reservation> reservations = new ArrayList<>();
 }
