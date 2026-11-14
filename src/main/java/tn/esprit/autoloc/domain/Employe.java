@@ -26,7 +26,8 @@ public class Employe {
     @Column(nullable = false, length = 20)
     private RoleEmploye role;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "agence_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "agence_id", nullable = true)
     private Agence agence;
+
 }
